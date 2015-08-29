@@ -113,7 +113,7 @@ var DEVICES = [
 			return /\bblackberry\s?(\d+)/;
 		}
 		return "bb10";
-	}],
+	}]
 ];
 
 // 操作系统信息识别表达式
@@ -162,7 +162,7 @@ var OS = [
 			ua.match(re_blackberry_6_7) ||
 			ua.match(re_blackberry_4_5);
 		return m ? {version: m[1]} : "blackberry";
-	}],
+	}]
 ];
 
 // 解析使用 Trident 内核的浏览器的 `浏览器模式` 和 `文档模式` 信息。
@@ -205,7 +205,7 @@ function IEMode(ua){
 		browserMode: browserMode,
 		engineVersion: engineVersion,
 		engineMode: engineMode,
-		compatible: engineVersion !== engineMode,
+		compatible: engineVersion !== engineMode
 	};
 }
 
@@ -240,7 +240,7 @@ var ENGINE = [
 		var match;
 		if ((match = ua.match(/\brv:([\d\w.]+).*\bgecko\/(\d+)/))) {
 			return {
-				version: match[1] + "." + match[2],
+				version: match[1] + "." + match[2]
 			};
 		}
 	}],
@@ -248,7 +248,7 @@ var ENGINE = [
 	["androidwebkit", /\bandroidwebkit\/([0-9.]+)/],
 	["coolpadwebkit", /\bcoolpadwebkit\/([0-9.]+)/],
 	["u2", /\bu2\/([0-9.]+)/],
-	["u3", /\bu3\/([0-9.]+)/],
+	["u3", /\bu3\/([0-9.]+)/]
 ];
 var BROWSER = [
 	// Microsoft Edge Browser, Default browser in Windows 10.
@@ -285,7 +285,7 @@ var BROWSER = [
 		try{
 			if(external && (external.mxVersion || external.max_version)){
 				return {
-					version: external.mxVersion || external.max_version,
+					version: external.mxVersion || external.max_version
 				};
 			}
 		}catch(ex){ /* */ }
@@ -306,7 +306,7 @@ var BROWSER = [
 			}
 		}catch(ex){ /* */ }
 		return {
-			version: version || NA_VERSION,
+			version: version || NA_VERSION
 		};
 	}],
 	["tao", /\btaobrowser\/([0-9.]+)/],
@@ -379,7 +379,7 @@ var BROWSER = [
 	// 如果不能被识别为 Safari，则猜测是 WebView。
 	["webview", /\bcpu(?: iphone)? os (?:[0-9._]+).+\bapplewebkit\b/],
 	["firefox", /\bfirefox\/([0-9.ab]+)/],
-	["nokia", /\bnokiabrowser\/([0-9.]+)/],
+	["nokia", /\bnokiabrowser\/([0-9.]+)/]
 ];
 
 // UserAgent Detector.
@@ -393,7 +393,7 @@ function detect(name, expression, ua){
 	var info = {
 		name: name,
 		version: NA_VERSION,
-		codename: "",
+		codename: ""
 	};
 	var t = toString(expr);
 	if(expr === true){
@@ -446,7 +446,7 @@ var parse = function(ua){
 		d.device = {
 			name: name,
 			version: v,
-			fullVersion: version,
+			fullVersion: version
 		};
 		d.device[name] = v;
 	}, d);
@@ -456,7 +456,7 @@ var parse = function(ua){
 		d.os = {
 			name: name,
 			version: v,
-			fullVersion: version,
+			fullVersion: version
 		};
 		d.os[name] = v;
 	}, d);
@@ -477,7 +477,7 @@ var parse = function(ua){
 			fullVersion: version,
 			mode: parseFloat(mode),
 			fullMode: mode,
-			compatible: ieCore ? ieCore.compatible : false,
+			compatible: ieCore ? ieCore.compatible : false
 		};
 		d.engine[name] = v;
 	}, d);
@@ -499,7 +499,7 @@ var parse = function(ua){
 			fullVersion: version,
 			mode: parseFloat(mode),
 			fullMode: mode,
-			compatible: ieCore ? ieCore.compatible : false,
+			compatible: ieCore ? ieCore.compatible : false
 		};
 		d.browser[name] = v;
 	}, d);
