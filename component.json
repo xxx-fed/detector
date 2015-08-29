@@ -1,0 +1,6 @@
+{
+    "repos": "https://github.com/hotoo/detector",
+    "version": "v2.4.0",
+    "name": "detector",
+    "main": "detector.js"
+}
