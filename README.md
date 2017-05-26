@@ -3,7 +3,6 @@
 ---
 
 [![NPM version](https://badge.fury.io/js/detector.png)](http://badge.fury.io/js/detector)
-[![spm package](http://spmjs.io/badge/detector)](http://spmjs.io/package/detector)
 [![Build Status](https://secure.travis-ci.org/hotoo/detector.png?branch=master)](https://travis-ci.org/hotoo/detector)
 [![Coverage Status](https://coveralls.io/repos/hotoo/detector/badge.png?branch=master)](https://coveralls.io/r/hotoo/detector)
 
